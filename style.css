@@ -1,0 +1,387 @@
+/* Reset e Configurações Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --fundo-pagina: #f8fafc;
+    --fundo-cartao: #ffffff;
+    --texto-principal: #0f172a;
+    --texto-secundario: #334155;
+    --primaria: #1e3a8a;
+    --foco-teclado: #2563eb;
+    
+    /* Cores do Semáforo com alto contraste */
+    --vermelho-bg: #fee2e2;
+    --vermelho-borda: #dc2626;
+    --vermelho-texto: #7f1d1d;
+
+    --amarelo-bg: #fef9c3;
+    --amarelo-borda: #ca8a04;
+    --amarelo-texto: #713f12;
+
+    --verde-bg: #dcfce7;
+    --verde-borda: #16a34a;
+    --verde-texto: #14532d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--fundo-pagina);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* Foco visível acessível para navegação por teclado */
+:focus-visible {
+    outline: 3px solid var(--foco-teclado);
+    outline-offset: 3px;
+}
+
+/* Link de salto para acessibilidade */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: var(--primaria);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--primaria);
+    color: #ffffff;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 5px solid #0f172a;
+}
+
+.identificacao {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.cabecalho h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.menu a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Seções Gerais */
+.secao {
+    background-color: var(--fundo-cartao);
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.secao h2 {
+    color: var(--primaria);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+/* Seção 1: Introdução */
+.card-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.intro-texto {
+    flex: 1;
+}
+
+.aviso-importante {
+    margin-top: 1.2rem;
+    padding: 1rem;
+    background-color: #eff6ff;
+    border-left: 5px solid var(--primaria);
+    border-radius: 6px;
+}
+
+/* Seção 2: Semáforo Interativo */
+.painel-semaforo {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    align-items: start;
+}
+
+.caixa-luzes {
+    background-color: #1e293b;
+    padding: 1.25rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.luz-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 1rem;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.luz-btn:hover {
+    transform: scale(1.02);
+}
+
+.luz-btn[aria-pressed="true"] {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px #0f172a;
+}
+
+.luz-vermelha {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.luz-amarela {
+    background-color: #facc15;
+    color: #0f172a;
+}
+
+.luz-verde {
+    background-color: #16a34a;
+    color: #ffffff;
+}
+
+.icone {
+    font-size: 1.6rem;
+}
+
+.painel-explicacao {
+    padding: 1.75rem;
+    border-radius: 12px;
+    border: 2px solid #cbd5e1;
+    background-color: #f1f5f9;
+    min-height: 260px;
+}
+
+.painel-explicacao.estado-vermelho {
+    background-color: var(--vermelho-bg);
+    border-color: var(--vermelho-borda);
+    color: var(--vermelho-texto);
+}
+
+.painel-explicacao.estado-amarelo {
+    background-color: var(--amarelo-bg);
+    border-color: var(--amarelo-borda);
+    color: var(--amarelo-texto);
+}
+
+.painel-explicacao.estado-verde {
+    background-color: var(--verde-bg);
+    border-color: var(--verde-borda);
+    color: var(--verde-texto);
+}
+
+.badge {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin: 0.4rem 0 1rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 4px;
+}
+
+#lista-orientacoes {
+    padding-left: 1.4rem;
+}
+
+#lista-orientacoes li {
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+/* Seção 3: Grid de Dicas */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.card-dica {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.card-dica h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primaria);
+    font-size: 1.15rem;
+}
+
+/* Seção 4: Quiz */
+.pergunta-bloco {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    background-color: #f8fafc;
+}
+
+.pergunta-bloco legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+    color: var(--texto-principal);
+}
+
+.opcao {
+    display: block;
+    margin-top: 0.75rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 6px;
+}
+
+.opcao:hover {
+    background-color: #e2e8f0;
+}
+
+.opcao input {
+    margin-right: 0.6rem;
+    transform: scale(1.2);
+}
+
+.quiz-acoes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-primario {
+    background-color: var(--primaria);
+    color: #ffffff;
+}
+
+.btn-primario:hover {
+    background-color: #172554;
+}
+
+.btn-secundario {
+    background-color: #e2e8f0;
+    color: var(--texto-principal);
+}
+
+.btn-secundario:hover {
+    background-color: #cbd5e1;
+}
+
+.resultado-quiz {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #eff6ff;
+    border: 2px solid var(--primaria);
+}
+
+/* Seção 5: Conclusão e Rodapé */
+.card-conclusao {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+}
+
+.rodape {
+    background-color: #0f172a;
+    color: #f8fafc;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+}
+
+.rodape p {
+    margin-bottom: 0.3rem;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .card-intro {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .painel-semaforo {
+        grid-template-columns: 1fr;
+    }
+}
