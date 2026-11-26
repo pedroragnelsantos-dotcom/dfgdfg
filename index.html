@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo da Acessibilidade — Autismo e Comunicação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Link para pular direto ao conteúdo (acessibilidade para teclado) -->
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="cabecalho">
+        <div class="container">
+            <p class="identificacao">Colégio Estadual Benedicto João Cordeiro • Programação Front-End I</p>
+            <h1>Semáforo da Acessibilidade</h1>
+            <p class="subtitulo">Informação, acolhimento e comunicação inclusiva para pessoas autistas no ambiente escolar.</p>
+            
+            <nav aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#semaforo-interativo">Semáforo Interativo</a></li>
+                    <li><a href="#comunicacao-inclusiva">Comunicação Inclusiva</a></li>
+                    <li><a href="#quiz">Quiz Educativo</a></li>
+                    <li><a href="#conclusao">Conclusão</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" class="container">
+        
+        <!-- 1. PÁGINA INICIAL / APRESENTAÇÃO -->
+        <section id="inicio" class="secao card-intro">
+            <div class="intro-texto">
+                <h2>O que é o Semáforo da Acessibilidade?</h2>
+                <p>Este projeto educativo utiliza as cores do semáforo de trânsito para orientar colegas, professores e funcionários sobre como construir uma comunicação mais clara, respeitosa e acessível com estudantes autistas.</p>
+                <div class="aviso-importante" role="note">
+                    <strong>Importante:</strong> O semáforo é uma ferramenta de conscientização sobre as <em>nossas atitudes</em>, e não uma avaliação do comportamento da pessoa autista. Cada pessoa é única e tem necessidades individuais.
+                </div>
+            </div>
+
+            <!-- Ilustração SVG acessível de um semáforo -->
+            <div class="intro-ilustracao">
+                <svg width="140" height="280" viewBox="0 0 140 280" role="img" aria-labelledby="titulo-svg desc-svg">
+                    <title id="titulo-svg">Ilustração de um semáforo educativo</title>
+                    <desc id="desc-svg">Um semáforo vertical escuro com três luzes circulares: vermelha no topo, amarela no meio e verde na base.</desc>
+                    <rect x="20" y="10" width="100" height="260" rx="20" fill="#1e293b" stroke="#0f172a" stroke-width="4"/>
+                    <circle cx="70" cy="60" r="30" fill="#dc2626"/>
+                    <circle cx="70" cy="140" r="30" fill="#eab308"/>
+                    <circle cx="70" cy="220" r="30" fill="#16a34a"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 2. SEMÁFORO INTERATIVO -->
+        <section id="semaforo-interativo" class="secao">
+            <h2>Semáforo Interativo</h2>
+            <p>Clique ou navegue com a tecla <kbd>Tab</kbd> e pressione <kbd>Enter</kbd> em cada luz para ver as orientações de comunicação:</p>
+
+            <div class="painel-semaforo">
+                <div class="caixa-luzes" role="group" aria-label="Controles do semáforo da acessibilidade">
+                    <button type="button" class="luz-btn luz-vermelha" data-cor="vermelho" aria-pressed="false">
+                        <span class="icone" aria-hidden="true">🛑</span>
+                        <span class="texto-luz">VERMELHO<br><small>Pare e reavalie</small></span>
+                    </button>
+
+                    <button type="button" class="luz-btn luz-amarela" data-cor="amarelo" aria-pressed="false">
+                        <span class="icone" aria-hidden="true">⚠️</span>
+                        <span class="texto-luz">AMARELO<br><small>Atenção e adaptação</small></span>
+                    </button>
+
+                    <button type="button" class="luz-btn luz-verde" data-cor="verde" aria-pressed="false">
+                        <span class="icone" aria-hidden="true">✅</span>
+                        <span class="texto-luz">VERDE<br><small>Comunicação acolhedora</small></span>
+                    </button>
+                </div>
+
+                <!-- Área dinâmica que anuncia mudanças para leitores de tela -->
+                <div id="painel-explicacao" class="painel-explicacao" aria-live="polite">
+                    <h3 id="titulo-status">Selecione uma luz ao lado</h3>
+                    <p id="subtitulo-status" class="badge">Aguardando seleção...</p>
+                    <ul id="lista-orientacoes">
+                        <li>Clique em qualquer cor do semáforo para explorar as boas práticas de acessibilidade.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. COMUNICAÇÃO INCLUSIVA -->
+        <section id="comunicacao-inclusiva" class="secao">
+            <h2>Comunicação Inclusiva na Prática</h2>
+            <p>Pequenas adaptações no dia a dia escolar fazem toda a diferença para garantir autonomia e bem-estar:</p>
+
+            <div class="grid-cards">
+                <article class="card-dica">
+                    <h3>🗣️ Linguagem Direta</h3>
+                    <p>Evite ironias, sarcasmos ou expressões de duplo sentido sem explicação. Prefira frases objetivas e claras.</p>
+                </article>
+
+                <article class="card-dica">
+                    <h3>⏳ Tempo de Processamento</h3>
+                    <p>Após fazer uma pergunta, aguarde com calma. Algumas pessoas precisam de mais tempo para organizar a resposta.</p>
+                </article>
+
+                <article class="card-dica">
+                    <h3>🖼️ Apoio Visual</h3>
+                    <p>Combine falas com textos escritos, listas de passos, ícones ou imagens para facilitar a compreensão das tarefas.</p>
+                </article>
+
+                <article class="card-dica">
+                    <h3>🎧 Ambiente Sensorial</h3>
+                    <p>Respeite o uso de abafadores de ruído e evite barulhos excessivos ou telas piscantes desnecessárias.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. QUIZ EDUCATIVO -->
+        <section id="quiz" class="secao">
+            <h2>Quiz Educativo</h2>
+            <p>Teste seus conhecimentos sobre acessibilidade e comunicação inclusiva:</p>
+
+            <form id="form-quiz" class="quiz-container">
+                <!-- Pergunta 1 -->
+                <fieldset class="pergunta-bloco">
+                    <legend>1. Ao conversar com um colega autista e perceber que ele demorou para responder, qual é a atitude mais adequada (Luz Verde)?</legend>
+                    <label class="opcao">
+                        <input type="radio" name="q1" value="a"> Repetir a pergunta em voz bem alta imediatamente.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="q1" value="b"> Dar tempo para a pessoa processar a informação e responder com calma.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="q1" value="c"> Mudar de assunto rapidamente para evitar silêncio.
+                    </label>
+                </fieldset>
+
+                <!-- Pergunta 2 -->
+                <fieldset class="pergunta-bloco">
+                    <legend>2. O que representa a luz AMARELA no Semáforo da Acessibilidade?</legend>
+                    <label class="opcao">
+                        <input type="radio" name="q2" value="a"> Atenção e adaptação: verificar se foi compreendido e reduzir excessos.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="q2" value="b"> Proibição de conversar durante o intervalo.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="q2" value="c"> Que todas as pessoas autistas aprendem exatamente do mesmo jeito.
+                    </label>
+                </fieldset>
+
+                <!-- Pergunta 3 -->
+                <fieldset class="pergunta-bloco">
+                    <legend>3. Por que não devemos usar APENAS cores para transmitir informações em um site acessível?</legend>
+                    <label class="opcao">
+                        <input type="radio" name="q3" value="a"> Porque sites coloridos carregam mais devagar no celular.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="q3" value="b"> Porque pessoas daltônicas ou usuárias de leitores de tela precisam de textos ou ícones de apoio.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="q3" value="c"> Porque o HTML5 não permite o uso de cores sem imagens.
+                    </label>
+                </fieldset>
+
+                <div class="quiz-acoes">
+                    <button type="submit" class="btn-primario">Verificar Respostas</button>
+                    <button type="button" id="btn-limpar-quiz" class="btn-secundario">Refazer Quiz</button>
+                </div>
+
+                <div id="resultado-quiz" class="resultado-quiz" aria-live="polite" hidden></div>
+            </form>
+        </section>
+
+        <!-- 5. CONCLUSÃO -->
+        <section id="conclusao" class="secao card-conclusao">
+            <h2>Conclusão: Respeito e Diversidade</h2>
+            <p>A verdadeira inclusão acontece quando adaptamos o ambiente e a nossa comunicação para acolher as diferenças, em vez de exigir que todos se comportem da mesma forma.</p>
+            <p>Quando praticamos a escuta ativa, a clareza e a empatia, transformamos a escola em um espaço mais seguro e acessível para todos.</p>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p><strong>Projeto Semáforo da Acessibilidade</strong></p>
+            <p>2º Ano — Curso Técnico em Desenvolvimento de Sistemas • Prof. Reinaldo Ferreira Junior</p>
+            <p>Colégio Estadual Benedicto João Cordeiro</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
